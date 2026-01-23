@@ -1,0 +1,8 @@
+node_modules/
+public/*.js.map
+public/**/*.d.ts
+public/**/*.js.map
+.DS_Store
+npm-debug.log*
+*.log
+
