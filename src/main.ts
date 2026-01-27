@@ -32,7 +32,6 @@ const initSmoothAnchors = (): void => {
 
 const initIntersectionObserver = (): void => {
   const animated = document.querySelectorAll<HTMLElement>(".fade-in");
-  const horizontalCards = document.querySelectorAll<HTMLElement>(".service-card");
 
   if (!("IntersectionObserver" in window) || animated.length === 0) return;
 
@@ -48,7 +47,7 @@ const initIntersectionObserver = (): void => {
     { threshold: 0.12, rootMargin: "0px 0px -10% 0px" }
   );
 
-  [...animated, ...horizontalCards].forEach((el) => observer.observe(el));
+  [...animated].forEach((el) => observer.observe(el));
 };
 
 const handleHeaderScroll = (): void => {
@@ -130,90 +129,4 @@ const init = (): void => {
 --------------------------------*/
 document.addEventListener("DOMContentLoaded", () => {
   init();
-
-  // 🚫 Desactivar scroll horizontal en móvil/tablet
-  if (window.innerWidth < 900) {
-    return;
-  }
-
-  const section = document.querySelector(".horizontal-section") as HTMLElement;
-  const track = document.querySelector(".horizontal-track") as HTMLElement;
-  const arrowNext = document.getElementById("arrow-next") as HTMLElement;
-  const arrowPrev = document.getElementById("arrow-prev") as HTMLElement;
-
-  if (!section || !track || !arrowNext || !arrowPrev) return;
-
-  const cards = Array.from(track.children) as HTMLElement[];
-  const cardWidth = cards[0].offsetWidth + 32;
-  const totalScroll = track.scrollWidth - window.innerWidth;
-
-  section.style.height = `${window.innerHeight + totalScroll * 1.05}px`;
-
-  let lockTriggered = false;
-
-  function updateArrows(index: number) {
-    if (index >= 5) {
-      arrowNext.classList.add("visible");
-      arrowPrev.classList.add("visible");
-    }
-
-    arrowPrev.classList.remove("disabled");
-
-    if (index >= cards.length - 2) arrowNext.classList.add("disabled");
-    else arrowNext.classList.remove("disabled");
-  }
-
-  /* --- FLECHAS CON CLICK --- */
-  arrowNext.addEventListener("click", () => {
-    const current = Math.abs(parseInt(track.style.transform.replace("translateX(-", ""))) || 0;
-    const next = Math.min(current + cardWidth, totalScroll);
-    track.style.transform = `translateX(-${next}px)`;
-  });
-
-  arrowPrev.addEventListener("click", () => {
-    const current = Math.abs(parseInt(track.style.transform.replace("translateX(-", ""))) || 0;
-    const prev = Math.max(current - cardWidth, 0);
-    track.style.transform = `translateX(-${prev}px)`;
-  });
-
-  /* --- SCROLL VERTICAL CONTROLANDO EL HORIZONTAL --- */
-  window.addEventListener("scroll", () => {
-    const rect = section.getBoundingClientRect();
-    const start = rect.top;
-    const end = rect.bottom - window.innerHeight;
-
-    if (start > 0) return;
-
-    if (start <= 0 && end >= 0) {
-      const scrollAmount = Math.min(Math.max(-start, 0), totalScroll);
-      const index = Math.round(scrollAmount / cardWidth);
-
-      track.style.transform = `translateX(-${scrollAmount}px)`;
-      updateArrows(index);
-
-      if (index === cards.length - 1 && !lockTriggered) {
-        lockTriggered = true;
-        document.body.style.overflowY = "hidden";
-
-        setTimeout(() => {
-          const current = window.scrollY;
-          window.scrollTo({ top: current });
-          document.body.style.overflowY = "auto";
-          lockTriggered = false;
-        }, 1500);
-      }
-    }
-  });
-
-  /* --- MENÚ HAMBURGUESA --- */
-  const menuToggle = document.querySelector(".menu-toggle") as HTMLElement;
-  const mobileNav = document.querySelector(".mobile-nav") as HTMLElement;
-
-  if (menuToggle && mobileNav) {
-    menuToggle.addEventListener("click", () => {
-      mobileNav.classList.toggle("is-open");
-      menuToggle.classList.toggle("is-open");
-      document.body.classList.toggle("no-scroll");
-    });
-  }
 });

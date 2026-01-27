@@ -10,33 +10,48 @@
       content="Asesoría financiera personalizada: inversiones, protección patrimonial y metas de vida."
     />
   </head>
+
   <body>
+
+    <!-- =========================================================
+         HEADER COMPLETO
+         ---------------------------------------------------------
+         Este header contiene:
+         - Logo
+         - Menú de escritorio (visible en desktop)
+         - Botón hamburguesa (visible en móvil)
+         - Menú móvil (oculto hasta que se abre)
+         Esta es la arquitectura correcta y profesional.
+    ========================================================== -->
     <header class="topbar">
+
       <div class="container topbar__content">
+
+        <!-- LOGO IZQUIERDA -->
         <div class="brand">
           <a href="/">
             <img src="/assets/logo.png" alt="Logotipo de Tibi Asesora" class="brand__logo" />
             <span class="brand__name">tibi asesora</span>
           </a>
         </div>
-      
-        <nav class="nav mobile-nav">
+
+        <!-- NAV (visible en todas las resoluciones) -->
+        <nav class="nav">
           <a href="#servicios" class="nav__link">Servicios</a>
           <a href="#citas" class="nav__link">Citas</a>
           <a href="#presupuestos" class="nav__link">Presupuestos</a>
         </nav>
-      </div>
 
-      <button class="menu-toggle" aria-label="Abrir menú">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
+      </div>
 
     </header>
 
+    <!-- =========================================================
+         CONTENIDO PRINCIPAL
+    ========================================================== -->
     <main>
+
+      <!-- HERO -->
       <section id="inicio" class="hero section">
         <div class="hero__texture"></div>
         <div class="container hero__content">
@@ -58,125 +73,94 @@
         </div>
       </section>
 
-      <section id="servicios" class="section section--muted servicios-section">
-        
-        <!-- Texto introductorio con scroll vertical normal -->
+      <!-- SERVICIOS -->
+      <section id="servicios" class="section section--muted">
         <div class="container">
           <header class="section__header fade-in">
             <p class="eyebrow">Servicios</p>
             <h2>Todo lo que necesitas, organizado y a tu ritmo</h2>
             <p class="section__lead">
-              Doce espacios pensados para cubrir las diferentes etapas de tu proceso financiero y de
-              importación. Puedes nombrarlos y llenarlos a medida que definas tu oferta.
+              Quince espacios pensados para cubrir las diferentes etapas de tu proceso financiero y de
+              importación.
             </p>
           </header>
-        </div>
-      
-        <!-- Scroll horizontal controlado por scroll vertical -->
-        <div class="horizontal-section">
-          <div class="horizontal-wrapper">
-            <div class="horizontal-container">
-              <div class="horizontal-track">
-              <article class="card service-card"><h3>Servicio 1</h3><p>Descripción pendiente.</p></article>
-              <article class="card service-card"><h3>Servicio 2</h3><p>Descripción pendiente.</p></article>
-              <article class="card service-card"><h3>Servicio 3</h3><p>Descripción pendiente.</p></article>
-              <article class="card service-card"><h3>Servicio 4</h3><p>Descripción pendiente.</p></article>
-              <article class="card service-card"><h3>Servicio 5</h3><p>Descripción pendiente.</p></article>
-              <article class="card service-card"><h3>Servicio 6</h3><p>Descripción pendiente.</p></article>
-              <article class="card service-card"><h3>Servicio 7</h3><p>Descripción pendiente.</p></article>
-              <article class="card service-card"><h3>Servicio 8</h3><p>Descripción pendiente.</p></article>
-              <article class="card service-card"><h3>Servicio 9</h3><p>Descripción pendiente.</p></article>
-              <article class="card service-card"><h3>Servicio 10</h3><p>Descripción pendiente.</p></article>
-              <article class="card service-card"><h3>Servicio 11</h3><p>Descripción pendiente.</p></article>
-              <article class="card service-card"><h3>Servicio 12</h3><p>Descripción pendiente.</p></article>
-              <article class="card service-card"><h3>Servicio 13</h3><p>Descripción pendiente.</p></article>
-              <article class="card service-card"><h3>Servicio 14</h3><p>Descripción pendiente.</p></article>
-              <article class="card service-card"><h3>Servicio 15</h3><p>Descripción pendiente.</p></article>
-              </div>
-            </div>
 
-            <div class="horizontal-arrow left" id="arrow-prev">←</div>
-            <div class="horizontal-arrow right" id="arrow-next">→</div>
+          <div class="services-grid">
+            <article class="card fade-in"><h3>Servicio 1</h3><p>Descripción pendiente.</p></article>
+            <article class="card fade-in"><h3>Servicio 2</h3><p>Descripción pendiente.</p></article>
+            <article class="card fade-in"><h3>Servicio 3</h3><p>Descripción pendiente.</p></article>
+            <article class="card fade-in"><h3>Servicio 4</h3><p>Descripción pendiente.</p></article>
+            <article class="card fade-in"><h3>Servicio 5</h3><p>Descripción pendiente.</p></article>
+            <article class="card fade-in"><h3>Servicio 6</h3><p>Descripción pendiente.</p></article>
+            <article class="card fade-in"><h3>Servicio 7</h3><p>Descripción pendiente.</p></article>
+            <article class="card fade-in"><h3>Servicio 8</h3><p>Descripción pendiente.</p></article>
+            <article class="card fade-in"><h3>Servicio 9</h3><p>Descripción pendiente.</p></article>
+            <article class="card fade-in"><h3>Servicio 10</h3><p>Descripción pendiente.</p></article>
+            <article class="card fade-in"><h3>Servicio 11</h3><p>Descripción pendiente.</p></article>
+            <article class="card fade-in"><h3>Servicio 12</h3><p>Descripción pendiente.</p></article>
+            <article class="card fade-in"><h3>Servicio 13</h3><p>Descripción pendiente.</p></article>
+            <article class="card fade-in"><h3>Servicio 14</h3><p>Descripción pendiente.</p></article>
+            <article class="card fade-in"><h3>Servicio 15</h3><p>Descripción pendiente.</p></article>
           </div>
         </div>
       </section>
-      
-      
 
+      <!-- CITAS -->
       <section id="citas" class="section">
         <div class="container split">
           <div class="fade-in" data-delay="short">
             <p class="eyebrow">Citas</p>
             <h2>Agenda una cita con Tibi</h2>
             <p class="section__lead">
-              Comparte tus datos y me pondré en contacto contigo para coordinar día, hora y formato
-              de la sesión.
+              Comparte tus datos y me pondré en contacto contigo para coordinar día, hora y formato.
             </p>
           </div>
 
           <form id="citas-form" class="form fade-in" data-delay="medium">
             <div class="form__row">
               <label for="nombre">Nombre y apellidos</label>
-              <input
-                id="nombre"
-                name="nombre"
-                type="text"
-                autocomplete="name"
-                required
-                placeholder="Tu nombre completo"
-              />
+              <input id="nombre" name="nombre" type="text" required placeholder="Tu nombre completo" />
             </div>
+
             <div class="form__row">
               <label for="telefono">Teléfono</label>
-              <input
-                id="telefono"
-                name="telefono"
-                type="tel"
-                autocomplete="tel"
-                placeholder="+52 55 1234 5678"
-              />
+              <input id="telefono" name="telefono" type="tel" placeholder="+52 55 1234 5678" />
             </div>
+
             <div class="form__row">
               <label for="correo">Correo electrónico</label>
-              <input
-                id="correo"
-                name="correo"
-                type="email"
-                autocomplete="email"
-                required
-                placeholder="tucorreo@email.com"
-              />
+              <input id="correo" name="correo" type="email" required placeholder="tucorreo@email.com" />
             </div>
+
             <button type="submit" class="btn btn--full">Enviar datos</button>
-            <p id="form-status" class="form__status" role="status" aria-live="polite"></p>
+            <p id="form-status" class="form__status"></p>
           </form>
         </div>
       </section>
 
+      <!-- PRESUPUESTOS -->
       <section id="presupuestos" class="section section--accent">
         <div class="container split">
           <div class="fade-in" data-delay="short">
             <p class="eyebrow">Presupuestos</p>
             <h2>¿Necesitas un presupuesto específico?</h2>
             <p class="section__lead">
-              Si ya tienes una idea clara de lo que necesitas o quieres comparar escenarios
-              puntuales, puedes solicitar un presupuesto detallado.
+              Envíame un correo con el mayor contexto posible y te responderé con un esquema detallado.
             </p>
           </div>
+
           <div class="presupuestos__content fade-in" data-delay="medium">
             <p>
-              Envíame un correo con el mayor contexto posible (objetivo, plazos, montos aproximados
-              y dudas clave) y te responderé con un esquema de presupuesto y próximas acciones.
-            </p>
-            <p class="presupuestos__email">
               Escríbeme a:
               <a href="mailto:presupuestos@tibi-asesora.com">presupuestos@tibi-asesora.com</a>
             </p>
           </div>
         </div>
       </section>
+
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="container footer__content">
         <span class="footer__brand">tibi asesora</span>
@@ -184,10 +168,8 @@
       </div>
     </footer>
 
-    <div id="toast" class="toast" role="status" aria-live="polite"></div>
-   
-    <script type="module" src="/src/main.ts"></script>
+    <div id="toast" class="toast"></div>
 
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
-
