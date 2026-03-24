@@ -36,5 +36,5 @@ tibi-asesora/
 
 ## Firebase
 
-En `src/firebase/config.ts` coloca tu configuración real de Firebase. En `src/firebase/submitCitas.ts` hay un stub listo para conectar con Firestore o Realtime Database; sustituye la lógica de ejemplo por llamadas reales.
+En `src/firebase/config.ts` coloca tu configuración real de Firebase. ` hay un stub listo para conectar con Firestore o Realtime Database; sustituye la lógica de ejemplo por llamadas reales.
 
